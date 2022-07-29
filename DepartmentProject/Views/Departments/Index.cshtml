@@ -1,0 +1,30 @@
+﻿@model List<DepartmentProject.Entities.Concrete.Department>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<br/>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Departman Id</th>
+        <th>Departman Adı</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DepartmentId</td>
+            <td>@item.DepartmentName</td>
+            <td>
+                <a href="#" class="btn btn-danger">Sil</a>
+                <a href="#" class="btn btn-success">Güncelle</a>
+                <a href="#" class="btn btn-info">Detay</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="#" class="btn btn-primary">Departman Ekle</a>
