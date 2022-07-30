@@ -1,0 +1,22 @@
+﻿@model DepartmentProject.Entities.Concrete.Department
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<br/>
+
+@using (Html.BeginForm("Update", "Departments", FormMethod.Post))
+{
+    <b>Departman Id</b>
+    @Html.TextBoxFor(p=>p.DepartmentId,new {@class= "form-control"})
+
+    <br/>
+    <b>Departman Adı</b>
+    @Html.TextBoxFor(p=>p.DepartmentName,new{@class="form-control"})
+
+    <br/>
+    <button class="btn-primary">Güncelle</button>
+}
+
+

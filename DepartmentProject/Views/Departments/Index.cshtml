@@ -18,8 +18,8 @@
             <td>@item.DepartmentId</td>
             <td>@item.DepartmentName</td>
             <td>
-                <a href="#" class="btn btn-danger">Sil</a>
-                <a href="#" class="btn btn-success">Güncelle</a>
+                <a href="@Url.Action("Delete", "Departments", new {departmentId = @item.DepartmentId})" class=" btn btn-danger">Sil</a>
+                <a href="@Url.Action("Update", "Departments", new {departmentId = @item.DepartmentId})" class=" btn btn-success">Güncelle</a>
                 <a href="#" class="btn btn-info">Detay</a>
             </td>
         </tr>
@@ -27,4 +27,4 @@
     </tbody>
 </table>
 
-<a href="#" class="btn btn-primary">Departman Ekle</a>
+<a href="@Url.Action("Create","Departments")" class="btn btn-primary">Departman Ekle</a>

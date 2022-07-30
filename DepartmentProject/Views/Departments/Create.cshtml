@@ -1,0 +1,13 @@
+﻿@model DepartmentProject.Entities.Concrete.Department
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<br/>
+<form class="form-group" method="post">
+    @Html.LabelFor(p=>p.DepartmentName,"Departman Adı")
+    @Html.TextBoxFor(p=>p.DepartmentName,new {@class="form-control"} )
+    <br/>
+    <button class="btn btn-info">Ekle</button>
+</form>
+
