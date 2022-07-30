@@ -2,6 +2,7 @@
 using DepartmentProject.Entities;
 using DepartmentProject.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DepartmentProject.Controllers
 {
@@ -48,6 +49,12 @@ namespace DepartmentProject.Controllers
             departmentContext.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult GetEmployeesOfDepartment(int departmentId)
+        {
+            var employeesOfDepartment = departmentContext.Employees.Where(p => p.DepartmentId == departmentId).Include(p=>p.Department).ToList();
+            return View(employeesOfDepartment);
         }
     }
 }

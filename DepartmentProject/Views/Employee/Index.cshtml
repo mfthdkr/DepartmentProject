@@ -1,0 +1,35 @@
+﻿@model List<DepartmentProject.Entities.Concrete.Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<br/>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Şehir</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeId</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.City</td>
+            <td>@item.Department.DepartmentName</td>
+            <td>
+                <a href="@Url.Action("Delete", "Employee", new {departmentId = @item.EmployeeId})" class=" btn btn-danger">Sil</a>
+                <a href="@Url.Action("Update", "Employee", new {departmentId = @item.EmployeeId})" class=" btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create","Employee")" class="btn btn-primary">Yeni Personel Ekle</a>
